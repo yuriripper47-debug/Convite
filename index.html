@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Fundo do Mar Encantado</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sky-50: #f0f9ff;
+            --sky-100: #e0f2fe;
+            --sky-200: #bae6fd;
+            --sky-300: #7dd3fc;
+            --sky-400: #38bdf8;
+            --sky-500: #0ea5e9;
+            --sky-700: #0369a1;
+            --sky-800: #075985;
+            --sky-900: #0c4a6e;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: linear-gradient(180deg, #e0f2fe 0%, #bae6fd 40%, #7dd3fc 75%, #38bdf8 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            user-select: none;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            inset: -12%;
+            z-index: 0;
+            pointer-events: none;
+            background:
+                radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.35) 0%, transparent 18%),
+                radial-gradient(circle at 72% 28%, rgba(125, 211, 252, 0.24) 0%, transparent 15%),
+                radial-gradient(circle at 58% 74%, rgba(14, 165, 233, 0.18) 0%, transparent 17%);
+            opacity: 0.9;
+            animation: oceanDrift 26s ease-in-out infinite alternate;
+        }
+
+        @keyframes oceanDrift {
+            from { transform: translate3d(-0.5%, -1%, 0) scale(1); }
+            to { transform: translate3d(0.5%, 1%, 0) scale(1.03); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                scroll-behavior: auto !important;
+            }
+        }
+
+        .font-fredoka {
+            font-family: 'Fredoka', cursive;
+        }
+
+        .invitation-highlight {
+            display: block;
+            font-family: 'Fredoka', cursive;
+            font-weight: 700;
+            font-size: 3em;
+            line-height: 1.05;
+        }
+
+        .invitation-age {
+            font-size: 2.25em;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.82);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 20px 50px rgba(14, 116, 144, 0.25);
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-16px) rotate(4deg); }
+        }
+
+        @keyframes floatMedium {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(18px) rotate(-5deg); }
+        }
+
+        @keyframes floatFast {
+            0%, 100% { transform: translateY(0px) scale(1) rotate(0deg); }
+            50% { transform: translateY(-22px) scale(1.04) rotate(3deg); }
+        }
+
+        @keyframes swimHorizontal {
+            0% { transform: translateX(-10px) translateY(0); }
+            50% { transform: translateX(12px) translateY(-8px); }
+            100% { transform: translateX(-10px) translateY(0); }
+        }
+
+        @keyframes wiggling {
+            0%, 100% { transform: rotate(-6deg); }
+            50% { transform: rotate(6deg); }
+        }
+
+        .anim-float-1 { animation: floatSlow 5s ease-in-out infinite; }
+        .anim-float-2 { animation: floatMedium 6s ease-in-out infinite 1s; }
+        .anim-float-3 { animation: floatFast 4.5s ease-in-out infinite 0.5s; }
+        .anim-swim { animation: swimHorizontal 7s ease-in-out infinite; }
+        .anim-wiggle { animation: wiggling 2.5s ease-in-out infinite; }
+
+        .reference-scene {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        .reference-piece {
+            position: absolute;
+            display: block;
+            width: clamp(70px, 11vw, 180px);
+            height: auto;
+            filter: drop-shadow(0 14px 18px rgba(14, 116, 144, 0.14));
+            opacity: 0.96;
+            animation: referenceFloat 12s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        .reference-piece--one {
+            position: absolute;
+            left: 1.5%;
+            top: 18%;
+            width: min(17vw, 120px);
+            height: auto;
+            filter: drop-shadow(0 18px 26px rgba(14, 116, 144, 0.16));
+            opacity: 0.96;
+            animation: referenceFloatOne 12s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        .reference-piece--two {
+            position: absolute;
+            left: 4%;
+            top: 56%;
+            width: min(19vw, 150px);
+            height: auto;
+            filter: drop-shadow(0 18px 26px rgba(14, 116, 144, 0.16));
+            opacity: 0.96;
+            animation: referenceFloatTwo 11s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        .reference-piece--three {
+            position: absolute;
+            left: 18%;
+            top: 30%;
+            width: min(18vw, 140px);
+            height: auto;
+            filter: drop-shadow(0 18px 26px rgba(14, 116, 144, 0.16));
+            opacity: 0.96;
+            animation: referenceFloatThree 10s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        .reference-piece--four {
+            position: absolute;
+            right: 1.5%;
+            top: 18%;
+            width: min(17vw, 120px);
+            height: auto;
+            filter: drop-shadow(0 18px 26px rgba(14, 116, 144, 0.16));
+            opacity: 0.96;
+            animation: referenceFloatFour 13s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        .reference-piece--five {
+            position: absolute;
+            right: 4%;
+            top: 56%;
+            width: min(19vw, 150px);
+            height: auto;
+            filter: drop-shadow(0 18px 26px rgba(14, 116, 144, 0.16));
+            opacity: 0.96;
+            animation: referenceFloatFive 12s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        .reference-piece--six {
+            position: absolute;
+            right: 19%;
+            top: 30%;
+            width: min(18vw, 140px);
+            height: auto;
+            filter: drop-shadow(0 18px 26px rgba(14, 116, 144, 0.16));
+            opacity: 0.96;
+            animation: referenceFloatSix 11s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        .reference-piece--seven {
+            position: absolute;
+            right: 6%;
+            bottom: 9%;
+            width: min(14vw, 110px);
+            height: auto;
+            filter: drop-shadow(0 18px 26px rgba(14, 116, 144, 0.16));
+            opacity: 0.96;
+            animation: referenceFloatSeven 12s ease-in-out infinite;
+            will-change: transform;
+        }
+
+        @keyframes referenceFloatOne { 0%,100% { transform: translateY(0) rotate(-5deg);} 50% { transform: translateY(-12px) rotate(5deg);} }
+        @keyframes referenceFloatTwo { 0%,100% { transform: translateY(0) rotate(4deg);} 50% { transform: translateY(-16px) rotate(-4deg);} }
+        @keyframes referenceFloatThree { 0%,100% { transform: translateY(0) rotate(-3deg);} 50% { transform: translateY(-14px) rotate(3deg);} }
+        @keyframes referenceFloatFour { 0%,100% { transform: translateY(0) rotate(4deg);} 50% { transform: translateY(-18px) rotate(-4deg);} }
+        @keyframes referenceFloatFive { 0%,100% { transform: translateY(0) rotate(-3deg);} 50% { transform: translateY(-12px) rotate(4deg);} }
+        @keyframes referenceFloatSix { 0%,100% { transform: translateY(0) rotate(5deg);} 50% { transform: translateY(-10px) rotate(-5deg);} }
+        @keyframes referenceFloatSeven { 0%,100% { transform: translateY(0) rotate(-4deg);} 50% { transform: translateY(-12px) rotate(4deg);} }
+
+        @media (max-width: 640px) {
+            .reference-piece--one { left: 2%; top: 16%; width: min(22vw, 86px); }
+            .reference-piece--two { left: 3%; top: 55%; width: min(25vw, 100px); }
+            .reference-piece--three { left: 18%; top: 28%; width: min(24vw, 105px); }
+            .reference-piece--four { right: 2%; top: 16%; width: min(22vw, 86px); }
+            .reference-piece--five { right: 3%; top: 55%; width: min(25vw, 100px); }
+            .reference-piece--six { right: 19%; top: 30%; width: min(24vw, 105px); }
+            .reference-piece--seven { right: 7%; bottom: 10%; width: min(18vw, 75px); }
+        }
+
+        #bubbleCanvas {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .background-music-player {
+            position: fixed;
+            top: 0;
+            left: -220px;
+            width: 200px;
+            height: 200px;
+            opacity: 0;
+            pointer-events: none;
+            border: 0;
+        }
+
+        @keyframes pulseGlow {
+            0%, 100% { box-shadow: 0 0 15px rgba(56, 189, 248, 0.4); }
+            50% { box-shadow: 0 0 30px rgba(56, 189, 248, 0.8); }
+        }
+
+        .pulse-glow {
+            animation: pulseGlow 2.5s infinite;
+        }
+
+        .coral-shadow {
+            filter: drop-shadow(0px 8px 12px rgba(14, 116, 144, 0.2));
+        }
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #e0f2fe;
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #38bdf8;
+            border-radius: 10px;
+        }
+
+        .floating-bubble {
+            position: fixed;
+            pointer-events: none;
+            z-index: 40;
+            font-size: 1.5rem;
+            opacity: 0.8;
+            animation: bubblePop 1.8s ease-out forwards;
+        }
+
+        @keyframes bubblePop {
+            0% {
+                transform: translateY(0) scale(0.8) rotate(0deg);
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateY(-80px) scale(1.3) rotate(10deg);
+                opacity: 0;
+            }
+        }
+
+        .modal-content {
+            animation: modalIn 0.25s ease-out;
+        }
+
+        @keyframes modalIn {
+            from {
+                opacity: 0;
+                transform: translateY(16px) scale(0.96);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+    </style>
+</head>
+<body class="relative flex flex-col justify-between min-h-screen text-slate-700 pb-12">
+    <canvas id="bubbleCanvas"></canvas>
+    <div id="backgroundMusicPlayer" class="background-music-player" aria-hidden="true"></div>
+
+    <div class="reference-scene" aria-hidden="true">
+        <img class="reference-piece reference-piece--one" src="cola/67e0cacfcc87b2e32811bd12a9249f9b.png" alt="Imagem decorativa 1">
+        <img class="reference-piece reference-piece--two" src="cola/a12bc4e19c40bfb191c52fd9dd438010.png" alt="Imagem decorativa 2">
+        <img class="reference-piece reference-piece--three" src="cola/3e6a442b6becd03f6b935a742d81eae7.png" alt="Imagem decorativa 3">
+        <img class="reference-piece reference-piece--four" src="cola/1d63ed5fc7687b34ff7178ed43cfe015.png" alt="Imagem decorativa 4">
+        <img class="reference-piece reference-piece--five" src="cola/2ff27946a2d585edd7dec6f4d32d6ef6.png" alt="Imagem decorativa 5">
+        <img class="reference-piece reference-piece--six" src="cola/16bf07762bbfa61efa8a24d62d564e00.png" alt="Imagem decorativa 6">
+        <img class="reference-piece reference-piece--seven" src="cola/sem-titulo-2.png" alt="Imagem decorativa 7">
+    </div>
+
+    <header class="relative z-30 w-full p-4 flex justify-between items-center max-w-4xl mx-auto">
+        <div class="flex items-center gap-2 bg-white/70 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/80 shadow-sm">
+            <span class="text-xl">🌊</span>
+            <span class="text-xs font-bold text-sky-800 uppercase tracking-wider">Fundo do Mar</span>
+        </div>
+        <button id="audioToggleBtn" type="button" onclick="toggleAudio()" aria-label="Tocar música" aria-pressed="false" disabled class="flex items-center gap-2 bg-white/80 hover:bg-white disabled:opacity-60 disabled:cursor-wait backdrop-blur-md px-4 py-2 rounded-full border border-sky-200 shadow-md transition-all text-sky-700 font-semibold text-xs sm:text-sm">
+            <span id="audioIcon" aria-hidden="true">▶</span>
+            <span id="audioText">Tocar música</span>
+        </button>
+    </header>
+
+    <main class="relative z-20 w-full max-w-xl mx-auto px-4 my-auto">
+        <div class="glass-card rounded-3xl p-6 sm:p-10 text-center relative overflow-hidden my-4">
+            <div class="inline-block bg-sky-100 text-sky-700 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold uppercase tracking-widest mb-4 shadow-sm">
+                               🌊 O fundo do mar está em festa! 
+                 Venha mergulhar e se divertir comigo nesse mar de aventura!  🐚
+            </div>
+
+            <p class="text-xl sm:text-2xl text-sky-800 font-semibold text-center mb-3">
+                <span class="invitation-highlight text-sky-500">Otávio Kalel</span>
+                <span class="invitation-highlight invitation-age text-amber-500 text-center" id="childAge">1 Aninho! 🐠</span>
+            </p>
+
+            <p class="text-slate-600 font-semibold text-base sm:text-lg leading-relaxed mb-6">
+                Com as graças de Deus, comemoramos o 1° ano do presente que ele nos deu e preparamos tudo com muito carinho para celebrar esse momento especial.
+            </p>
+
+            <div class="bg-white/90 rounded-2xl p-5 sm:p-6 shadow-inner space-y-4 border border-sky-100 mb-6 text-left sm:text-center">
+                <div class="flex sm:justify-center items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center text-xl shrink-0">📅</div>
+                    <div>
+                        <p class="text-xs uppercase font-bold text-sky-400">Data Especial</p>
+                        <p class="font-bold text-slate-800 text-sm sm:text-base" id="eventDate">Sábado, 14 de novembro de 2026</p>
+                    </div>
+                </div>
+
+                <hr class="border-sky-100">
+
+                <div class="flex sm:justify-center items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center text-xl shrink-0">⏰</div>
+                    <div>
+                        <p class="text-xs uppercase font-bold text-sky-400">Horário</p>
+                        <p class="font-bold text-slate-800 text-sm sm:text-base" id="eventTime">Às 17:30</p>
+                    </div>
+                </div>
+
+                <hr class="border-sky-100">
+
+                <div class="flex sm:justify-center items-center gap-4">
+                    <div class="w-10 h-10 rounded-full bg-sky-100 flex items-center justify-center text-xl shrink-0">📍</div>
+                    <div>
+                        <p class="text-xs uppercase font-bold text-sky-400">Local da Aventura</p>
+                        <p class="font-bold text-slate-800 text-sm sm:text-base" id="eventLocation">Espaço Vip</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+                <button onclick="openModal()" class="flex-1 py-3.5 px-6 bg-gradient-to-r from-sky-400 to-blue-500 hover:from-sky-500 hover:to-blue-600 text-white font-bold rounded-2xl shadow-lg transition-all transform hover:-translate-y-0.5 active:translate-y-0 pulse-glow flex items-center justify-center gap-2 text-base">
+                    <span>💌</span> Confirmar Presença (RSVP)
+                </button>
+
+                <button onclick="openMap()" class="py-3.5 px-5 bg-white hover:bg-sky-50 text-sky-700 font-bold rounded-2xl border-2 border-sky-200 shadow-md transition-all flex items-center justify-center gap-2 text-sm">
+                    <span>🗺️</span> Ver Mapa
+                </button>
+            </div>
+
+            <p class="text-xs text-slate-400 mt-6">
+                Uma cena marinha em movimento, feita com carinho para esse momento especial. 🫧
+            </p>
+        </div>
+    </main>
+
+    <footer class="relative w-full z-10 pointer-events-none mt-auto">
+        <div class="w-full flex justify-between items-end px-2 sm:px-12 -mb-2">
+            <svg class="w-28 sm:w-48 h-auto coral-shadow" viewBox="0 0 200 150">
+                <path d="M20 150 C10 100 40 70 30 40 C25 25 40 20 45 35 C55 70 45 110 50 150 Z" fill="#F472B6"/>
+                <path d="M50 150 C40 110 70 80 65 50 C60 35 75 30 80 45 C90 80 75 120 80 150 Z" fill="#FB7185"/>
+                <path d="M80 150 C75 120 110 100 115 70 C120 55 130 60 125 75 C115 105 105 130 110 150 Z" fill="#38BDF8"/>
+                <circle cx="30" cy="40" r="4" fill="#FCE7F3"/>
+                <circle cx="65" cy="50" r="4" fill="#FCE7F3"/>
+                <circle cx="115" cy="70" r="4" fill="#E0F2FE"/>
+            </svg>
+
+            <svg class="w-28 sm:w-48 h-auto coral-shadow" viewBox="0 0 200 150">
+                <path d="M180 150 C190 100 160 70 170 40 C175 25 160 20 155 35 C145 70 155 110 150 150 Z" fill="#FBBF24"/>
+                <path d="M150 150 C160 110 130 80 135 50 C140 35 125 30 120 45 C110 80 125 120 120 150 Z" fill="#F59E0B"/>
+                <path d="M120 150 C115 120 90 90 85 65 C80 50 60 52 64 68 C72 95 85 120 80 150 Z" fill="#38BDF8"/>
+                <circle cx="170" cy="45" r="4" fill="#FEF3C7"/>
+                <circle cx="130" cy="54" r="4" fill="#FEF3C7"/>
+                <circle cx="90" cy="65" r="4" fill="#E0F2FE"/>
+            </svg>
+        </div>
+    </footer>
+
+    <div id="rsvpModal" class="fixed inset-0 z-50 hidden bg-slate-900/45 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="modal-content bg-white rounded-3xl shadow-2xl w-full max-w-md p-6 sm:p-8 border border-sky-100 relative">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-sky-100 text-sky-700 hover:bg-sky-200 transition-colors font-bold">✕</button>
+            <div class="text-center mb-5">
+                <div class="text-4xl mb-2">🐠</div>
+                <h2 class="font-fredoka text-3xl text-sky-900">Confirme sua presença</h2>
+                <p class="text-sm text-slate-500 mt-2">Vamos nadar juntos no dia especial!</p>
+            </div>
+
+            <form id="rsvpForm" class="space-y-4">
+                <div>
+                    <label for="guestName" class="block text-sm font-bold text-slate-700 mb-1">Seu nome</label>
+                    <input id="guestName" name="guestName" type="text" class="w-full rounded-2xl border border-sky-200 bg-sky-50 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-sky-300" placeholder="Ex: Maria" required>
+                </div>
+
+                <div>
+                    <label for="guestMessage" class="block text-sm font-bold text-slate-700 mb-1">Mensagem</label>
+                    <textarea id="guestMessage" name="guestMessage" rows="3" class="w-full rounded-2xl border border-sky-200 bg-sky-50 px-4 py-3 focus:outline-none focus:ring-2 focus:ring-sky-300" placeholder="Vai ser um dia incrível!"></textarea>
+                </div>
+
+                <button type="submit" class="w-full rounded-2xl bg-gradient-to-r from-sky-400 to-blue-500 text-white font-bold py-3.5 shadow-md hover:from-sky-500 hover:to-blue-600 transition-all">
+                    Enviar confirmação
+                </button>
+            </form>
+
+            <div id="confirmationMessage" class="mt-4 space-y-3 hidden">
+                <p class="text-center text-sm text-emerald-700 font-semibold">Escolha para qual contato enviar sua confirmação:</p>
+                <a id="rsvpContactOne" href="#" target="_blank" rel="noopener noreferrer" class="block rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-center text-white font-bold py-3 transition-colors">Enviar para (87) 98802-7795</a>
+                <a id="rsvpContactTwo" href="#" target="_blank" rel="noopener noreferrer" class="block rounded-2xl bg-emerald-500 hover:bg-emerald-600 text-center text-white font-bold py-3 transition-colors">Enviar para (87) 98802-5883</a>
+                <button type="button" onclick="resetRsvpForm()" class="w-full text-sm text-sky-700 font-semibold py-2">Voltar ao formulário</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const modal = document.getElementById('rsvpModal');
+        const form = document.getElementById('rsvpForm');
+        const confirmationMessage = document.getElementById('confirmationMessage');
+
+        function openModal() {
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            form.reset();
+            form.classList.remove('hidden');
+            confirmationMessage.classList.add('hidden');
+        }
+
+        function resetRsvpForm() {
+            confirmationMessage.classList.add('hidden');
+            form.classList.remove('hidden');
+        }
+
+        function openMap() {
+            window.open('https://maps.app.goo.gl/CCtqCxEqFtfSWh2Q7', '_blank', 'noopener,noreferrer');
+        }
+
+        function popBubble(element) {
+            const bubble = document.createElement('div');
+            bubble.className = 'floating-bubble';
+            bubble.textContent = ['🫧', '💙', '🐚', '✨'][Math.floor(Math.random() * 4)];
+
+            const rect = element.getBoundingClientRect();
+            bubble.style.left = `${rect.left + rect.width / 2 - 12}px`;
+            bubble.style.top = `${rect.top + rect.height / 2 - 12}px`;
+            document.body.appendChild(bubble);
+
+            setTimeout(() => bubble.remove(), 1800);
+        }
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+            const guestName = document.getElementById('guestName').value.trim() || 'Amigo';
+            const message = document.getElementById('guestMessage').value.trim();
+            const details = [
+                'Olá! Confirmo presença no aniversário de Otávio Kalel, dia 14/11/2026 às 17:30.',
+                `Nome: ${guestName}`,
+                message ? `Mensagem: ${message}` : ''
+            ].filter(Boolean).join('\n');
+            const whatsappMessage = encodeURIComponent(details);
+
+            document.getElementById('rsvpContactOne').href = `https://wa.me/5587988027795?text=${whatsappMessage}`;
+            document.getElementById('rsvpContactTwo').href = `https://wa.me/5587988025883?text=${whatsappMessage}`;
+            form.classList.add('hidden');
+            confirmationMessage.classList.remove('hidden');
+        });
+
+        const canvas = document.getElementById('bubbleCanvas');
+        const ctx = canvas.getContext('2d');
+        let bubbles = [];
+
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+
+        function createBubble() {
+            const radius = Math.random() * 5 + 4;
+            bubbles.push({
+                x: Math.random() * canvas.width,
+                y: canvas.height + radius,
+                radius,
+                speed: Math.random() * 0.7 + 0.4,
+                opacity: Math.random() * 0.5 + 0.2,
+                drift: (Math.random() - 0.5) * 0.8
+            });
+        }
+
+        function drawBubbles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            for (let i = bubbles.length - 1; i >= 0; i--) {
+                const bubble = bubbles[i];
+                bubble.y -= bubble.speed;
+                bubble.x += bubble.drift;
+
+                ctx.beginPath();
+                ctx.arc(bubble.x, bubble.y, bubble.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${bubble.opacity})`;
+                ctx.fill();
+
+                if (bubble.y + bubble.radius < 0 || bubble.x < -20 || bubble.x > canvas.width + 20) {
+                    bubbles.splice(i, 1);
+                }
+            }
+        }
+
+        function animateBubbles() {
+            if (Math.random() < 0.08) createBubble();
+            drawBubbles();
+            requestAnimationFrame(animateBubbles);
+        }
+
+        resizeCanvas();
+        animateBubbles();
+        window.addEventListener('resize', resizeCanvas);
+
+        const audioButton = document.getElementById('audioToggleBtn');
+        const audioIcon = document.getElementById('audioIcon');
+        const audioText = document.getElementById('audioText');
+        let youtubePlayer = null;
+
+        window.onYouTubeIframeAPIReady = function () {
+            youtubePlayer = new YT.Player('backgroundMusicPlayer', {
+                height: '200',
+                width: '200',
+                videoId: 'iY91JoMWQoM',
+                playerVars: {
+                    autoplay: 0,
+                    controls: 0,
+                    start: 17,
+                    playsinline: 1,
+                    rel: 0
+                },
+                events: {
+                    onReady: function (event) {
+                        const playerFrame = event.target.getIframe();
+                        playerFrame.classList.add('background-music-player');
+                        playerFrame.setAttribute('aria-hidden', 'true');
+                        playerFrame.setAttribute('tabindex', '-1');
+                        audioButton.disabled = false;
+                    },
+                    onStateChange: function (event) {
+                        const isPlaying = event.data === YT.PlayerState.PLAYING;
+                        audioIcon.textContent = isPlaying ? '⏸' : '▶';
+                        audioText.textContent = isPlaying ? 'Pausar música' : 'Tocar música';
+                        audioButton.setAttribute('aria-label', isPlaying ? 'Pausar música' : 'Tocar música');
+                        audioButton.setAttribute('aria-pressed', String(isPlaying));
+                    },
+                    onError: function () {
+                        audioButton.disabled = true;
+                        audioText.textContent = 'Música indisponível';
+                    }
+                }
+            });
+        };
+
+        const youtubeApi = document.createElement('script');
+        youtubeApi.src = 'https://www.youtube.com/iframe_api';
+        youtubeApi.async = true;
+        document.head.appendChild(youtubeApi);
+
+        function toggleAudio() {
+            if (!youtubePlayer || audioButton.disabled) return;
+
+            const playerState = youtubePlayer.getPlayerState();
+            if (playerState === YT.PlayerState.PLAYING || playerState === YT.PlayerState.BUFFERING) {
+                youtubePlayer.pauseVideo();
+                return;
+            }
+
+            if (youtubePlayer.getCurrentTime() < 17) {
+                youtubePlayer.seekTo(17, true);
+            }
+            youtubePlayer.playVideo();
+        }
+
+    </script>
+</body>
+</html>
